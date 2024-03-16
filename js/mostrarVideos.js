@@ -22,6 +22,6 @@ return video;
 
 //função pra consumir as funções do conectaApi
 async function listaVideo() {
-    const lista = await conectaApi.listaVideos();
+    const listaApi = await conectaApi.listaVideos();
 
 }
