@@ -6,7 +6,7 @@ const formulario = document.querySelector("[data-formulario]");
 //pelo async e await então elas retorna uma promise, e não teria acesso aqui 
 //até que a promise fosse resolvida, então é necessário transformar essa em assincrona tbm
 async function criarVideo(evento) {
-    evento.preventDefault();
+    evento.preventDefault(); //evita carregamento da página
     
     const imagem = document.querySelector("[data-imagem]").value;
     const url = document.querySelector("[data-url]").value;
