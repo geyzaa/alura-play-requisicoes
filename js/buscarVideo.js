@@ -9,6 +9,11 @@ async function buscarVideo(evento) {
 
     const lista = document.querySelector("[data-lista]")
 
+    while (lista.firstChild) {
+        lista.removeChild(lista.firstChild); 
+    }
+    //enquanto a lista tiver um primeiro filho (algo nela) remove o primeiro da lista
+
     busca.forEach(elemento => lista.appendChild(
         constroiCard(elemento.titulo, elemento.descricao, elemento.url, elemento.imagem))) 
 }
