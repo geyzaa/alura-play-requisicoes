@@ -22,11 +22,15 @@ return video;
 
 //função pra consumir as funções do conectaApi
 async function listaVideos() {
-    const listaApi = await conectaApi.listaVideos();
-    listaApi.forEach(elemento => lista.appendChild(
-        constroiCard(elemento.titulo, elemento.descricao, elemento.url, elemento.imagem)))   
-//p cada item da lista da Api, criou um card(li) que foi anexada dentro da ul do index.html 
-//que está sendo referenciado como lista, realizando a conexao das duas funções
+    try {
+        const listaApi = await conectaApi.listaVideos();
+        listaApi.forEach(elemento => lista.appendChild(
+            constroiCard(elemento.titulo, elemento.descricao, elemento.url, elemento.imagem)))   
+    //p cada item da lista da Api, criou um card(li) que foi anexada dentro da ul do index.html 
+    //que está sendo referenciado como lista, realizando a conexao das duas funções
+    } catch {
+        lista.innerHTML= `<h2 class="mensagem__titulo">Não foi possível carregar a lista de vídeos</h2>`
+    }
 }
 
 

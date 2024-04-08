@@ -38,6 +38,7 @@ async function buscaVieo(termoDeBusca) {
     return conexaoConvertida;
 }
 
+//exportando a variável 
 export const conectaApi = {
     listaVideos,
     criaVideo,

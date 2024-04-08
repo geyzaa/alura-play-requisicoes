@@ -1,5 +1,6 @@
-import { conectaApi } from "./conectaApi.js";
-import constroiCard  from "./mostrarVideos.js";
+import { conectaApi } from "./conectaApi.js";  //importa a variável que foi exportada, acessa o conectaApi e as funções dentro do arquivo
+
+import constroiCard  from "./mostrarVideos.js"; //importando função
 
 async function buscarVideo(evento) {
     evento.preventDefault();
@@ -20,4 +21,4 @@ async function buscarVideo(evento) {
 
 const botaoDePesquisa = document.querySelector("[data-botao-pesquisa]"); //seleciona o botao
 
-botaoDePesquisa.addEventListener("click", evento => buscarVideo(evento)) //adc evento de click no botao, evento é o click
+botaoDePesquisa.addEventListener("click", evento => buscarVideo(evento)) //adc evento de click no botao, evento é o click, envia o evento pra função buscarVideo
