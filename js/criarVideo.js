@@ -12,11 +12,15 @@ async function criarVideo(evento) {
     const url = document.querySelector("[data-url]").value;
     const titulo = document.querySelector("[data-titulo]").value;
     const descricao = Math.floor(Math.random() * 10).toString();
+    try {
+        await conectaApi.criaVideo(titulo, descricao, url, imagem); //parâmetros enviados na mesma ordem que na criaVideo
 
-    await conectaApi.criaVideo(titulo, descricao, url, imagem); //parâmetros enviados na mesma ordem que na criaVideo
-
-    window.location.href = "../pages/envio-concluido.html"; 
-   //feedback caso tenha dado certo, redirecionar a pag quando o envio é feito com sucesso
+        window.location.href = "../pages/envio-concluido.html"; 
+    //feedback caso tenha dado certo, redirecionar a pag quando o envio é feito com sucesso
+    } catch (e) { //mensagem de erro do throw new Error, no arquivo conectaApi 
+        alert(e);
+    }
+   
 }
 
 formulario.addEventListener("submit", evento => criarVideo(evento));
