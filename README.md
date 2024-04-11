@@ -16,4 +16,6 @@
 
 ## Screenshots
 ![Screenshot da tela inicial do AluraPlay](https://imgur.com/aymxEsh.png)
+![image](https://github.com/geyzaa/alura-play-requisicoes/assets/97538755/5cb96978-e6e3-49dc-b548-2808e9ff8e84)
+
 ![Screenshot da tela do formulário do AluraPlay](https://imgur.com/ShNADf2.png)
