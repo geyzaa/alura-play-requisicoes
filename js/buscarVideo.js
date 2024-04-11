@@ -16,8 +16,15 @@ async function buscarVideo(evento) {
     //enquanto a lista tiver um primeiro filho (algo nela) remove o primeiro da lista
 
     busca.forEach(elemento => lista.appendChild(
-        constroiCard(elemento.titulo, elemento.descricao, elemento.url, elemento.imagem))) 
+        constroiCard(elemento.titulo, elemento.descricao, elemento.url, elemento.imagem)))
+        
+    if (busca.length == 0){
+        lista.innerHTML = `<h2 class="mensagem__titulo">Não existem vídeos com esse termo</h2>`
+        //validaçao de acordo com tamanho da lista
+    }
 }
+
+    
 
 const botaoDePesquisa = document.querySelector("[data-botao-pesquisa]"); //seleciona o botao
 
